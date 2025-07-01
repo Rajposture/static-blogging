@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InstaClone - A Simple Instagram-Like Website</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background-color: #fafafa;
+      }
+
+      /* Header */
+      header {
+        background-color: white;
+        border-bottom: 1px solid #dbdbdb;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+      }
+
+      header h1 {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      header .icons a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+      }
+
+      /* Main Content */
+      .container {
+        max-width: 900px;
+        margin: 80px auto 20px auto;
+        padding: 0 20px;
+      }
+
+      /* Profile Section */
+      .profile-section {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        padding: 20px;
+        border: 1px solid #dbdbdb;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+
+      .profile-section img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+
+      .profile-info h2 {
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+
+      .profile-info p {
+        color: #666;
+        margin-bottom: 10px;
+      }
+
+      .profile-stats {
+        display: flex;
+        gap: 20px;
+      }
+
+      .profile-stats span {
+        font-weight: bold;
+      }
+
+      /* Post Form */
+      .post-form {
+        background-color: white;
+        padding: 20px;
+        border: 1px solid #dbdbdb;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+
+      .post-form input[type="text"],
+      .post-form input[type="url"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #dbdbdb;
+        border-radius: 5px;
+      }
+
+      .post-form button {
+        background-color: #0095f6;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .post-form button:hover {
+        background-color: #007bb5;
+      }
+
+      /* Feed */
+      .feed {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .post {
+        background-color: white;
+        border: 1px solid #dbdbdb;
+        border-radius: 5px;
+      }
+
+      .post-header {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+      }
+
+      .post-header img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+
+      .post-header h3 {
+        font-size: 16px;
+      }
+
+      .post-image img {
+        width: 100%;
+        max-height: 500px;
+        object-fit: cover;
+      }
+
+      .post-actions {
+        padding: 10px;
+        display: flex;
+        gap: 10px;
+      }
+
+      .post-actions button {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .post-actions .like-count {
+        font-size: 14px;
+        margin-left: 5px;
+      }
+
+      .post-caption {
+        padding: 0 10px 10px;
+        font-size: 14px;
+      }
+
+      .post-caption strong {
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>InstaClone</h1>
+      <div class="icons">
+        <a
+          href="#"
+          onclick="document.getElementById('post-form').scrollIntoView()"
+          >➕</a
+        >
+        <a href="#" onclick="alert('Messages feature coming soon!')">✉</a>
+        <a
+          href="#"
+          onclick="document.querySelector('.profile-section').scrollIntoView()"
+          >👤</a
+        >
+      </div>
+    </header>
+
+    <div class="container">
+      <!-- Profile Section -->
+      <div class="profile-section">
+        <img src="https://via.placeholder.com/100" alt="Profile Picture" />
+        <div class="profile-info">
+          <h2>yourusername</h2>
+          <p>Just a creator sharing my journey 🌟</p>
+          <div class="profile-stats">
+            <span>120 Posts</span>
+            <span>1.5k Followers</span>
+            <span>300 Following</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Form -->
+      <div class="post-form" id="post-form">
+        <input type="text" id="caption" placeholder="Write a caption..." />
+        <input type="url" id="image-url" placeholder="Paste image URL..." />
+        <button onclick="createPost()">Post</button>
+      </div>
+
+      <!-- Feed -->
+      <div class="feed" id="feed">
+        <!-- Sample Post -->
+        <div class="post">
+          <div class="post-header">
+            <img src="https://via.placeholder.com/40" alt="User Avatar" />
+            <h3>yourusername</h3>
+          </div>
+          <div class="post-image">
+            <img src="https://via.placeholder.com/600x400" alt="Post Image" />
+          </div>
+          <div class="post-actions">
+            <button onclick="likePost(this)">❤</button>
+            <span class="like-count">10 likes</span>
+            <button onclick="alert('Comment feature coming soon!')">💬</button>
+          </div>
+          <div class="post-caption">
+            <strong>yourusername</strong> Loving this sunny day ☀
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function createPost() {
+          const caption = document.getElementById('caption').value;
+          const imageUrl = document.getElementById('image-url').value;
+          if (!caption || !imageUrl) {
+              alert('Please fill in both caption and image URL!');
+              return;
+          }
+
+          const feed = document.getElementById('feed');
+          const post = document.createElement('div');
+          post.className = 'post';
+          post.innerHTML = `
+              <div class="post-header">
+                  <img src="https://via.placeholder.com/40" alt="User Avatar">
+                  <h3>yourusername</h3>
+              </div>
+              <div class="post-image">
+                  <img src="${imageUrl}" alt="Post Image">
+              </div>
+              <div class="post-actions">
+                  <button onclick="likePost(this)">❤</button>
+                  <span class="like-count">0 likes</span>
+                  <button onclick="alert('Comment feature coming soon!')">💬</button>
+              </div>
+              <div class="post-caption">
+                  <strong>yourusername</strong> ${caption}
+              </div>
+          `;
+          feed.prepend(post);
+          document.getElementById('caption').value = '';
+          document.getElementById('image-url').value = '';
+      }
+
+      function likePost(button) {
+          const likeCountElement = button.nextElementSibling;
+          let likes = parseInt(likeCountElement.textContent) || 0;
+          likes++;
+          likeCountElement.textContent = ${likes} likes;
+      }
+    </script>
+  </body>
+</html>

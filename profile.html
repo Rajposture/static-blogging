@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="logo.2.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Form</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #0e0a0a;
+        background: url("login img1.jpg") no-repeat center center/cover;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .form-container {
+        max-width: 500px;
+        width: 100%;
+        background: rgba(164, 136, 189, 0.9);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(200, 181, 181, 0.1);
+        padding: 20px;
+        backdrop-filter: blur(10px);
+        background: rgba(122, 107, 107, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 12px;
+        padding: 20px 30px;
+        width: 400px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      }
+
+      .form-header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .form-header h1 {
+        font-size: 24px;
+        color: #000000;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 5px;
+        color: #090505;
+      }
+
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #f1f1f1;
+        border-radius: 5px;
+        font-size: 14px;
+        background: transparent;
+        text-emphasis-color: rgb(255, 250, 250);
+        -webkit-text-fill-color: rgb(0, 0, 0);
+      }
+
+      .profile-pic {
+        width: 15px;
+        border-radius: 90%;
+        background: transparent;
+        padding: 3px;
+        position: center;
+        height: 110px;
+        width: 120px;
+        border-radius: 50%;
+        margin-left: 110px;
+      }
+      .form-group textarea {
+        resize: vertical;
+      }
+
+      .form-group input[type="file"] {
+        padding: 3px;
+      }
+
+      .form-group button {
+        width: 100%;
+        padding: 10px;
+        background-color: #8f61ac;
+        color: rgb(112, 53, 53);
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .form-group button:hover {
+        background-color: #005bb5;
+      }
+
+      @media (max-width: 768px) {
+        .form-header h1 {
+          font-size: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .form-header h1 {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <div class="form-header">
+        <h1>Create Your Profile</h1>
+      </div>
+      <form>
+        <div class="form-group">
+          <label for="photo"></label>
+          <img src="profile.32.jpg" class="profile-pic" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="45"
+            height="50"
+            fill="currentColor"
+            class="bi bi-plus"
+            viewBox="5 -2 17 20"
+          >
+            <path
+              d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+            />
+          </svg>
+          <input type="file" id="photo" name="photo" accept="image/*" />
+        </div>
+
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your full name"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="enter your mobile number"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="bio">Bio</label>
+          <textarea
+            id="bio"
+            name="bio"
+            rows="4"
+            placeholder="Tell us about yourself"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

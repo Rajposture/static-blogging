@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   
+    <title>my Blogging site</title>
+    <link rel="stylesheet" href="style2.css" />
+    <link rel="icon" type="image/x-icon" href="logo.2.png" />
+  </head>
+  <body>
+  
+      <section class="new-post">
+        <h2>Create a New Post</h2>
+        <input type="text" id="post-title" placeholder="Enter post title" />
+        <textarea
+          id="post-content"
+          placeholder="blog "
+        ></textarea>
+        <button id="publish-post">Publish</button>
+      </section>
+    </main>
+    
+  </body>
+  
+  <script>
+    
+    document.getElementById("toggle-btn").addEventListener("click", function () {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.classList.toggle("visible"); 
+    });
+  </script>
+  <script src="new.js"></script>
+  
+</html>

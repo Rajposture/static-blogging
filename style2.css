@@ -1,0 +1,112 @@
+body {
+  background-image: url(login\ img1.jpg);
+  font-family: "Roboto", sans-serif;
+  background-position: center;
+  height: 100vh;
+  width: 100% !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  position: relative;
+}
+
+.container-fluid {
+  -webkit-backdrop-filter: blur(8px);
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+
+  font-weight: 700;
+}
+header nav a {
+  height: 40px;
+  margin-left: 10px;
+  text-align: center;
+  font-size: 50px;
+  background: linear-gradient(to right, black, rgb(212, 212, 21));
+  -webkit-background-clip: text;
+  color: transparent;
+  margin: 0 15px;
+  text-decoration: solid;
+  font-size: 2rem;
+}
+
+header nav a:hover {
+  text-decoration: solid;
+}
+
+.container {
+  background: rgba(202, 196, 196, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 110px 100px;
+  width: 900px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  height: 90%;
+  margin-top: 90px;
+}
+
+.sidebar {
+  backdrop-filter: blur(30px);
+  width: 25%;
+  padding: 20px;
+  background: transparent;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+}
+
+.sidebar input {
+  width: 50%;
+  padding: 20px;
+  margin-bottom: 20px;
+  font-size: 0.5rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  color: transparent;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.sidebar ul li:hover {
+  text-decoration: underline;
+  backdrop-filter: blur(30px);
+  background: rgba(6, 5, 5, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.new-post {
+  background: #c19898;
+  padding: 20px 50px;
+  box-shadow: 0 2px 5px rgba(240, 228, 228, 0.1);
+  margin-top: 100px;
+  margin-left: -50px;
+  width: 400px;
+  position: center;
+  background-position: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 40px;
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.new-post input,
+.new-post textarea,
+.new-post button {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  background: transparent;
+  color: rgb(0, 0, 0);
+}
